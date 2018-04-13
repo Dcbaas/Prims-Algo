@@ -9,7 +9,7 @@ std::string & Vertex::getVertex(){
   return this->vertex;
 }
 
-std::vector<Vertex> &  Vertex::getAdjacent(){
+std::vector<std::string> &  Vertex::getAdjacent(){
   return adjacent;
 }
 

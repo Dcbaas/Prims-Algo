@@ -6,14 +6,23 @@
 class Edge{
 public:
 
+Edge();
+
 Edge(std::string v1, std::string v2);
 
-std::string & getEdge() const;
+std::vector<std::string> & getEdge() const;
 
 void setEdge(std::string v1, std::string v2);
 
+void setV1(std::string v1);
+
+void setV2(std::string v2);
+
+std::string toString();
+
 private:
-std::string* edge;
+std::string v1;
+std::string v2;
 
 };
 

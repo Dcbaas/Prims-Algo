@@ -10,7 +10,7 @@ Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weight
 
 std::string & getVertex();
 
-std::vector <Vertex> & getAdjacent();
+std::vector <std::string> & getAdjacent();
 
 std::vector<int> & getWeights();
 
@@ -18,7 +18,7 @@ private:
 
 std::string vertex;
 
-std::vector<Vertex> adjacent;
+std::vector<std::string> adjacent;
 
 std::vector<int> w; 
 };

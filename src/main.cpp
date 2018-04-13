@@ -22,8 +22,9 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
  
     for(auto vertex_it = graph.begin(); vertex_it != graph.end(); ++vertex_it){
 		//Get the list of connected edges and thier weights 
-		std::vector<std::string> adjacent_vertex = *vertex_it.getAdjacent();
-		std::vector<int> adjacent_weights = *vertex_it.getWeights();
+		Vertex v = *vertex_it;
+		std::vector<std::string> adjacent_vertex = v.getAdjacent();
+		std::vector<int> adjacent_weights = v.getWeights();
 		for(int i{0}; i < adjacent_weights.size(); ++i){
 			if(adjacent_weights[i] < lowestWeight){
 				lowest = adjacent_weights[i];

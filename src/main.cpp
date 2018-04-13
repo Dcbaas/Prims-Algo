@@ -17,7 +17,7 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
   coveredVertices.push_back(startPoint);
   
   while(coveredVertices.size() != graph.size()){
-    Edge lowest();
+    Edge lowest("","");
 	int lowestWeight{200000000};
  
     for(auto vertex_it = graph.begin(); vertex_it != graph.end(); ++vertex_it){
@@ -27,8 +27,8 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
 		std::vector<int> adjacent_weights = v.getWeights();
 		for(int i{0}; i < adjacent_weights.size(); ++i){
 			if(adjacent_weights[i] < lowestWeight){
-				lowest = adjacent_weights[i];
-				lowest.setEdge(vertex_it.getVertex(),adjacent_vertex[i]);
+				lowestWeight = adjacent_weights[i];
+				lowest.setEdge(v.getVertex(),adjacent_vertex[i]);
 			}
 		}
     }
@@ -41,7 +41,9 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
 //Deletes the edge represented in the graph. If it is undirected it 
 //deletes the edge twice.
 void remove_edge(std::vector<Vertex> & graph, Edge & edge){
+
 	for(auto vertex_it = graph.begin(); vertex_it != graph.end(); ++vertex_it){
+		vertex_it
 		if(*vertex_it.getVertex() == edge[0]){
 			std::vector<string> adjacent_vertex = *vertex_it.getAdjacent();
 			std::vector<int> adjacent_weights = *vertex_it.getWeights();

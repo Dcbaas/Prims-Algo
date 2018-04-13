@@ -43,10 +43,10 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
 void remove_edge(std::vector<Vertex> & graph, Edge & edge){
 
 	for(auto vertex_it = graph.begin(); vertex_it != graph.end(); ++vertex_it){
-		vertex_it
-		if(*vertex_it.getVertex() == edge[0]){
-			std::vector<string> adjacent_vertex = *vertex_it.getAdjacent();
-			std::vector<int> adjacent_weights = *vertex_it.getWeights();
+		Vertex v = *vertex_it;
+		if(v.getVertex() == edge[0]){
+			std::vector<string> adjacent_vertex = v.getAdjacent();
+			std::vector<int> adjacent_weights = v.getWeights();
 			for(int i{0}; i < adjacent_weights.size(); ++i){
 				if(adjacent_vertex[i] == edge[1]){
 					adjacent_vertex.erase(adjacent_vertex.begin() + i);
@@ -57,9 +57,9 @@ void remove_edge(std::vector<Vertex> & graph, Edge & edge){
 			}
 		}
 		
-		if(*vertex_it.getVertex() == edge[1]){
-			std::vector<string> adjacent_vertex = *vertex_it.getAdjacent();
-			std::vector<int> adjacent_weights = *vertex_it.getWeights();
+		if(v.getVertex() == edge[1]){
+			std::vector<string> adjacent_vertex = v.getAdjacent();
+			std::vector<int> adjacent_weights = v.getWeights();
 			for(int i{0}; i < adjacent_weights.size(); ++i){
 				if(adjacent_vertex[i] == edge[0]){
 					adjacent_vertex.erase(adjacent_vertex.begin() + i);

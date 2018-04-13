@@ -5,22 +5,22 @@
 #include <vector>
 
 class Vertex{
-
-Vertex(std::string vertex, std::vector<*Vertex> adjacent, std::vector<int> weights);
+public:
+Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weights);
 
 ~Vertex();
 
-std::string getVertex() const;
+std::string & getVertex() const;
 
-std::vector <*Vetex> getAdjacent() const;
+std::vector <Vertex> & getAdjacent() const;
 
-std::vector<int> getWeights() const;
+std::vector<int> & getWeights() const;
 
 private:
 
-std::string vetex;
+std::string vertex;
 
-std::vector<*Vertex> adjacent;
+std::vector<Vertex> adjacent;
 
 std::vector<int> weights; 
 };

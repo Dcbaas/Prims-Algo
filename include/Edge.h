@@ -2,6 +2,7 @@
 #define EDGE_H
 
 #include <string>
+#include <vector>
 
 class Edge{
 public:

@@ -6,7 +6,7 @@
 
 class Vertex{
 public:
-Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weights);
+Vertex(std::string vertex, std::vector<std::string> adjacent, std::vector<int> weights);
 
 std::string & getVertex();
 

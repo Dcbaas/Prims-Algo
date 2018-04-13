@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include "Edge.h"
 
 Edge::Edge(){}
@@ -28,6 +29,6 @@ void Edge::setV2(std::string v2){
 }
 
 std::string Edge::toString(){
-	std::string returnStr{""+v1 + ", " + v2);
+	std::string returnStr{""+v1 + ", " + v2};
 	return returnStr;
 }

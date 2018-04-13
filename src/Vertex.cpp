@@ -2,7 +2,7 @@
 #include<string>
 #include "Vertex.h"
 
-Vertex::Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weights):
+Vertex::Vertex(std::string vertex, std::vector<std::string> adjacent, std::vector<int> weights):
 vertex(vertex), adjacent(adjacent), w(weights){}
 
 std::string & Vertex::getVertex(){

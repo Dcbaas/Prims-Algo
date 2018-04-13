@@ -6,6 +6,9 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
 void remove_edge(std::vector<Vertex> & graph, Edge & edge);
 
 int main(int argc, char** argv){
+  std::vector<std::string> adj;
+  std::vector<int> weight;
+
 
 return 0;
 }
@@ -26,7 +29,7 @@ std::vector<Edge> prims_algorithm(std::vector<Vertex> graph, Vertex & startPoint
 		std::vector<std::string> adjacent_vertex = v.getAdjacent();
 		std::vector<int> adjacent_weights = v.getWeights();
 		for(int i{0}; i < adjacent_weights.size(); ++i){
-			if(adjacent_weights[i] < lowestWeight){
+			if(adjacent_weights[i] < lowestWeight && !cycle){
 				lowestWeight = adjacent_weights[i];
 				lowest.setEdge(v.getVertex(),adjacent_vertex[i]);
 			}

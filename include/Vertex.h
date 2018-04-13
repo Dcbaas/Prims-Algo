@@ -8,13 +8,11 @@ class Vertex{
 public:
 Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weights);
 
-~Vertex();
+std::string & getVertex();
 
-std::string & getVertex() const;
+std::vector <Vertex> & getAdjacent();
 
-std::vector <Vertex> & getAdjacent() const;
-
-std::vector<int> & getWeights() const;
+std::vector<int> & getWeights();
 
 private:
 
@@ -22,7 +20,7 @@ std::string vertex;
 
 std::vector<Vertex> adjacent;
 
-std::vector<int> weights; 
+std::vector<int> w; 
 };
 
 #endif

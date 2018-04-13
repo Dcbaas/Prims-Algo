@@ -3,20 +3,18 @@
 #include "Vertex.h"
 
 Vertex::Vertex(std::string vertex, std::vector<Vertex> adjacent, std::vector<int> weights):
-vertex(vertex), adjacent(adjacent), weights(weights){}
+vertex(vertex), adjacent(adjacent), w(weights){}
 
-Vertex::~Vertex(){}
-
-std::string& Vertex::getVertex() const{
-  return vertex;
+std::string & Vertex::getVertex(){
+  return this->vertex;
 }
 
-std::vector<Vertex> &  Vertex::getAdjacent() const{
+std::vector<Vertex> &  Vertex::getAdjacent(){
   return adjacent;
 }
 
-std::vector<int> getWeight() const{
-  return weights;
+std::vector<int> &  Vertex::getWeights(){
+  return w;
 }
 
 

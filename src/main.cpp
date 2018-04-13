@@ -59,7 +59,7 @@ void remove_edge(std::vector<Vertex> & graph, Edge & edge){
 		}
 		
 		if(v.getVertex() == edge_index[1]){
-			std::vector<string> adjacent_vertex = v.getAdjacent();
+			std::vector<std::string> adjacent_vertex = v.getAdjacent();
 			std::vector<int> adjacent_weights = v.getWeights();
 			for(int i{0}; i < adjacent_weights.size(); ++i){
 				if(adjacent_vertex[i] == edge_index[0]){

@@ -44,11 +44,12 @@ void remove_edge(std::vector<Vertex> & graph, Edge & edge){
 
 	for(auto vertex_it = graph.begin(); vertex_it != graph.end(); ++vertex_it){
 		Vertex v = *vertex_it;
-		if(v.getVertex() == edge[0]){
-			std::vector<string> adjacent_vertex = v.getAdjacent();
+		std::vector<std::string> edge_index = edge.getEdge();
+		if(v.getVertex() == edge_index[0]){
+			std::vector<std::string> adjacent_vertex = v.getAdjacent();
 			std::vector<int> adjacent_weights = v.getWeights();
 			for(int i{0}; i < adjacent_weights.size(); ++i){
-				if(adjacent_vertex[i] == edge[1]){
+				if(adjacent_vertex[i] == edge_index[1]){
 					adjacent_vertex.erase(adjacent_vertex.begin() + i);
 					adjacent_weights.erase(adjacent_weights.begin() +1);
 					break;
@@ -57,11 +58,11 @@ void remove_edge(std::vector<Vertex> & graph, Edge & edge){
 			}
 		}
 		
-		if(v.getVertex() == edge[1]){
+		if(v.getVertex() == edge_index[1]){
 			std::vector<string> adjacent_vertex = v.getAdjacent();
 			std::vector<int> adjacent_weights = v.getWeights();
 			for(int i{0}; i < adjacent_weights.size(); ++i){
-				if(adjacent_vertex[i] == edge[0]){
+				if(adjacent_vertex[i] == edge_index[0]){
 					adjacent_vertex.erase(adjacent_vertex.begin() + i);
 					adjacent_weights.erase(adjacent_weights.begin() +1);
 					break;
